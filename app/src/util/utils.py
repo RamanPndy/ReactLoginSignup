@@ -1,5 +1,5 @@
 from bottle import Bottle
-from src.config import DB_NAME, DB_USER, DB_PASS
+from app.src.config import DB_NAME, DB_USER, DB_PASS
 import bottle_pgsql
 
 def get_pg_installed_app():

@@ -1,6 +1,6 @@
 from config import DEBUG, HOST, PORT
-from src.util.utils import get_pg_installed_app
-from src.controllers import (users)
+from app.src.util.utils import get_pg_installed_app
+from app.src.controllers import (users)
 
 def get_app():
     app  = get_pg_installed_app()
