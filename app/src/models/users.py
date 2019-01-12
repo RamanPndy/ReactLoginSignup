@@ -1,4 +1,4 @@
-from src.config import OK_STATUS_CODE, INTERNAL_SERVER_ERROR, ALREADY_EXIST, NOT_EXIST
+from app.src.config import OK_STATUS_CODE, INTERNAL_SERVER_ERROR, ALREADY_EXIST, NOT_EXIST
 
 class LoginSignUp(object):
 

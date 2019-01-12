@@ -1,6 +1,6 @@
 from bottle import request
-from src.util.utils import get_pg_installed_app
-from src.models.users import LoginSignUp
+from app.src.util.utils import get_pg_installed_app
+from app.src.models.users import LoginSignUp
 
 def get_app():
     app = get_pg_installed_app()
