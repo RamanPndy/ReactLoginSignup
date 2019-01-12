@@ -1,0 +1,4 @@
+bottle==0.12.16
+bottle-pgsql==0.2
+psycopg2==2.7.6.1
+
