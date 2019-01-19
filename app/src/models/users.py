@@ -1,4 +1,4 @@
-from app.src.config import OK_STATUS_CODE, INTERNAL_SERVER_ERROR, ALREADY_EXIST, NOT_EXIST
+from app.src.config import OK_STATUS_CODE, INTERNAL_SERVER_ERROR, ALREADY_EXIST, NOT_EXIST, PROVIDE_USER_INPUT
 
 class LoginSignUp(object):
 
@@ -9,13 +9,16 @@ class LoginSignUp(object):
         return {'result' : code}
 
     def register_user(self, username, email, password):
-        result = self.get_user(username).get('result', [])
-        if result == NOT_EXIST:
-            register_query = "INSERT INTO public.users (username, email, password) VALUES ('{}', '{}', '{}')".format(username, email, password)
-            self.db.execute(register_query)
-            return self.get_result_code(OK_STATUS_CODE)
+        if username and email and password:
+            result = self.get_user(username).get('result', [])
+            if result == NOT_EXIST:
+                register_query = "INSERT INTO public.users (username, email, password) VALUES ('{}', '{}', '{}')".format(username, email, password)
+                self.db.execute(register_query)
+                return self.get_result_code(OK_STATUS_CODE)
+            else:
+                return self.get_result_code(ALREADY_EXIST)
         else:
-            return self.get_result_code(ALREADY_EXIST)
+            return self.get_result_code(PROVIDE_USER_INPUT)
 
     def login_user(self, username, password):
         result = self.get_user(username).get('result', [])
