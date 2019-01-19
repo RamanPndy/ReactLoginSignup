@@ -2,7 +2,7 @@
 Login And SignUp CRUD operations using React and Bottle
 
 Back-end: Python 2.7, Bottle Framework <br />
-Front-end: React, Material-UI <br />
+Front-end: React, Material-UI , NodeJS, npm<br />
 DB: PostgreSql<br />
 
 <b>DB Setup:</b>
@@ -24,5 +24,14 @@ For custom DB credentials such as dbname, username, password, you need to update
 </ol>
 
 This will start the backend server.
+
+<b>Frontend Setup:</b>
+<ol>
+<li>navigate to <b>package.json</b> folder inside <b>frontend</b> directory in command line and execute </li>
+<code>npm install</code><br />
+This wil install all require node modules
+<li>To start front end server and execute within same direcotry</li>
+<code>npm start</code><br />
+</ol>
 
 Note: Any third party library that needs to be added should be added in <b>requirements.txt</b> file and any new SQL migration file that needs to be added should be added in <b>migrations</b> directory.
