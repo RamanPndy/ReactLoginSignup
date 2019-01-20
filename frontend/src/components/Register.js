@@ -30,7 +30,19 @@ class Register extends Component {
             },
             body: req_data
             }).then(res=>res.json())
-            .then(res => console.log(res));
+            .then(res => {
+                console.log(res)
+                let result = res.result
+                if (result === 201) {
+                    alert("user already exists")
+                }
+                else if (result === 200){
+                    alert("account created successfully")
+                }
+            })
+            .catch(error => {
+                alert("some error occured!")
+            });
     }
 
     handleOnChange = (event) => {
